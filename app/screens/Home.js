@@ -42,8 +42,8 @@ class Home extends Component {
       <Container>
         <StatusBar translucent={false} barStyle="default" />
         <Header onPress={this.handlePressOptions} />
-        <Logo />
         <KeyboardAvoidingView behavior="padding">
+          <Logo />
           <TextInputButton
             buttonText={TEMP_BASE_CURRENCY}
             defaultValue={TEMP_BASE_PRICE}
@@ -58,13 +58,13 @@ class Home extends Component {
             onPress={this.handlePressQuoteCurrency}
             editable={false}
           />
+          <LastConverted
+            conversionRate={TEMP_CONVERSION_RATE}
+            date={TEMP_CONVERTION_DATE}
+            base={TEMP_BASE_CURRENCY}
+            quote={TEMP_QUOTE_CURRENCY}
+          />
         </KeyboardAvoidingView>
-        <LastConverted
-          conversionRate={TEMP_CONVERSION_RATE}
-          date={TEMP_CONVERTION_DATE}
-          base={TEMP_BASE_CURRENCY}
-          quote={TEMP_QUOTE_CURRENCY}
-        />
         <ClearButton content="Reverse currency" onPress={this.handlePressSwapCurrency} />
       </Container>
     );

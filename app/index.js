@@ -9,6 +9,8 @@ EStyleSheet.build({
   $border: '#CECECE',
   $inputText: '#797979',
   $lightGray: '#F0F0F0',
+  // only for debug
+  // $outline: 1,
 });
 
 class App extends Component {
