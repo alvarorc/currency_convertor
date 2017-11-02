@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Home from './screens/Home';
+import Navigator from './config/routes';
 
 EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
   $white: '#FFF',
-  $border: '#CECECE',
+  $border: '#E2E2E2',
   $inputText: '#797979',
   $lightGray: '#F0F0F0',
+  $darktext: '#343434',
   // only for debug
   // $outline: 1,
 });
 
-class App extends Component {
-  render() {
-    return <Home />;
-  }
-}
-
-export default App;
+export default Navigator;

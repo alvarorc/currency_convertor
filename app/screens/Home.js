@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { StatusBar, KeyboardAvoidingView } from 'react-native';
 
 import { Container } from '../components/Container';
@@ -16,26 +17,31 @@ const TEMP_CONVERSION_RATE = '0.7974';
 const TEMP_CONVERTION_DATE = new Date();
 
 class Home extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
+
   state = {
     currencyValue: 0,
   };
 
   handlePressBaseCurrency = () => {
-    console.log('====================================');
-    console.log('change base currency');
-    console.log('====================================');
+    const { navigation } = this.props;
+    navigation.navigate('CurrencyList', { title: 'Base Currency' });
   };
 
   handlePressQuoteCurrency = () => {
-    console.log('====================================');
-    console.log('change quote currency');
-    console.log('====================================');
+    const { navigation } = this.props;
+    navigation.navigate('CurrencyList', { title: 'Quote Currency' });
   };
 
   handleInputCurrency = (e) => {};
 
   handlePressSwapCurrency = () => {};
-  handlePressOptions = () => {};
+  handlePressOptions = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Options');
+  };
 
   render() {
     return (
